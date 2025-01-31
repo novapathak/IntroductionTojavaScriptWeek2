@@ -2,7 +2,7 @@
 
 //Strings
 
-const a="Naman Kumar"
+const a="Nova Pathak"
 
 console.log(a[0]);
 console.log(a[1]);
