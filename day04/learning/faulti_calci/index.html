@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faulty Calculator</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        .container { max-width: 300px; margin: auto; padding: 20px; border: 1px solid #ddd; }
+        input, button { margin: 5px; padding: 10px; }
+        button { cursor: pointer; background: #f77; border: none; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Faulty Calculator 🤪</h2>
+        <input type="number" id="num1" placeholder="Enter number 1">
+        <input type="number" id="num2" placeholder="Enter number 2">
+        <br>
+        <button onclick="calculate('+')">-</button>
+        <button onclick="calculate('-')">+</button>
+        <button onclick="calculate('*')">/</button>
+        <button onclick="calculate('/')">*</button>
+        <h3>Result: <span id="result">0</span></h3>
+    </div>
+
+    <script>
+        function calculate(operator) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("result").innerText = "Invalid Input";
+                return;
+            }
+
+            let correctResult = eval(num1 + operator + num2);
+            let faultyResult = correctResult + Math.floor(Math.random() * 10) - 5;
+
+            let finalResult = Math.random() < 0.3 ? faultyResult : correctResult;
+            document.getElementById("result").innerText = finalResult;
+        }
+    </script>
+</body>
+</html>

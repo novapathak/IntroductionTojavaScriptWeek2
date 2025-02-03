@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Name Generator</title>
+    <style>
+        body {
+         text-align: center;
+          font-family: Arial, sans-serif;
+           padding: 20px; }
+        .container { 
+        max-width: 400px; 
+        margin: auto;
+         padding: 20px;
+          border: 1px solid #ddd; }
+        button { 
+        padding: 10px; 
+        background: green;
+         color: white; 
+         border: none; 
+         cursor: pointer;
+          }
+        h2 {
+         color: #333; 
+         }
+        #businessName { 
+        font-size: 24px; 
+        font-weight: bold;
+         margin-top: 20px;
+          color: #007bff;
+           }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Business Name Generator</h2>
+        <button onclick="generateBusinessName()">Generate Name</button>
+        <p id="businessName">Click the button to generate a name!</p>
+    </div>
+
+    <script>
+        const adjectives = ["Smart", "Bold", "Creative", "Brilliant", "Dynamic", "Fast", "Powerful", "Innovative", "NextGen", "Future"];
+        const nouns = ["Tech", "Solutions", "Enterprises", "Creations", "Industries", "Labs", "Systems", "World", "Corporation", "Studio"];
+
+        function generateBusinessName() {
+            let randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            let randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+            document.getElementById("businessName").innerText = randomAdjective + " " + randomNoun;
+        }
+    </script>
+</body>
+</html>
